@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <title>icik icik</title>
+</head>
+<body>
+  
+    <div class="countainer">
+        <nav>
+            <a onclick="rerender()"id="home">home</a>
+            <a onclick="darkMode()"id="mode">mode</a>
+        </nav>
+<        <h1>icik univers</h1>
+        <p class="inpo" id="info"></p>
+        <p class = "terserah">icik univers adalah perkumpulan para baikers celeng yang sangat sopan dan menghargai satu sama lain dijalanan</p>
+    </div>
+
+    <!--intializing fungtion script-->
+    <script>
+        let body =document.body;
+        let info = document.getElementById("info");
+        let mode = document.getElementById("mode");
+        let home = document.getElementById("home");
+
+        const darkLimit = 5;
+        let darkcounter= 0;
+        let darkRemainingLeft;
+
+function darkMode(){
+if(darkRemainingLeft == 1){
+    info.textContent = "jatah darkmode wes ntek wirr"
+    mode.style.display="none";
+    home.textContent ="restart"
+        console.log('jatah wes ntek su kok arep nambah')
+        return;
+    }
+    darkcounter+=1;
+     darkRemainingLeft=darkLimit - darkcounter;
+    console.log('icikiwir adalah celeng diklik sebanyak: ',darkcounter);
+console.log(' kesempatanmu nggari:', darkRemainingLeft);
+
+//render
+info.textContent = `darkmode dipakai ${darkcounter}x,tersisa ${darkRemainingLeft}`
+
+    body.classList.toggle("dark");
+} 
+function rerender (){
+    location.reload();
+}
+    </script>
+</body>
+</html>
